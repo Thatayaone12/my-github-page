@@ -1,77 +1,210 @@
-selector {
-
-    property: value;
-}
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
+/* ===== Modern Reset & Variables ===== */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
+:root {
+    --primary: #10b981;           /* Fresh emerald green */
+    --primary-dark: #059669;
+    --accent: #f97316;            /* Warm orange for mailto */
+    --text: #1e2937;
+    --text-light: #475569;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --shadow-sm: 0 4px 12px rgba(16, 185, 129, 0.08);
+    --shadow-md: 0 20px 40px rgba(16, 185, 129, 0.12);
+    --radius: 16px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    letter-spacing: -0.03em;
+}
+
+p {
+    margin-bottom: 1.6rem;
+    color: var(--text-light);
+}
+
+/* ===== Header – Elegant gradient hero ===== */
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
-    padding: 20px;
+    padding: 5.5rem 2rem 6rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 30%, rgba(255,255,255,0.22) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 0 1rem;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Navigation – Glassmorphic pills ===== */
+nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    font-weight: 600;
+    padding: 0.75rem 1.6rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
-main{
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+/* ===== Main Content – Beautiful card ===== */
+main {
+    max-width: 880px;
+    margin: -4rem auto 5rem;
+    padding: 3rem 2.5rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 10;
 }
 
-main img{
+/* ===== Images – Premium look ===== */
+img,
+main img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px 0;
+    margin: 2.8rem auto;
+    border-radius: 14px;
+    border: 3px solid #e0f2e9;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s ease;
 }
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+
+img:hover,
+main img:hover {
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.22);
+    border-color: var(--primary);
+}
+
+/* ===== Links ===== */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after,
+a:focus::after {
     width: 100%;
 }
 
-p{
- font-size: 1.1em;
+a:hover {
+    color: var(--primary-dark);
 }
 
-a {
-    color: #4CAF50;
-    text-decoration: none;
+/* Special mailto styling */
+main a[href^="mailto:"] {
+    color: var(--accent);
+    font-weight: 600;
 }
 
-a:hover{
-    text-decoration: underline;
+main a[href^="mailto:"]::after {
+    background: var(--accent);
 }
-img{
-    border: 5px solid #4CAF50;
-    border-radius: 10px;
+
+/* ===== Footer – Clean & modern ===== */
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2.8rem 1.5rem 3rem;
+    font-size: 0.98rem;
+    margin-top: auto;
 }
-main a[href^="mailto:"]{
-    color: #ff5722;
-    font-weight: bold;
+
+footer a {
+    color: #cbd5e1;
+    transition: color 0.2s;
 }
+
+footer a:hover {
+    color: white;
+}
+
+/* ===== Responsive & Extra Polish ===== */
+@media (max-width: 640px) {
+    header { padding: 4rem 1.2rem 5rem; }
+    main { 
+        margin: -3rem 1rem 4rem;
+        padding: 2rem 1.6rem;
+        border-radius: 12px;
+    }
+    nav a { padding: 0.65rem 1.2rem; font-size: 0.97rem; }
+}
+
+/* Smooth scroll & focus */
+html {
+    scroll-behavior: smooth;
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
+}
+
 
