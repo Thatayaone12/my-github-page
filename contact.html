@@ -1,129 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with Thatayaone Rodney Brooks">
-  <title>Contact Me</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for better icons (standard improvement) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!--Custom CSS-->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Brooks & CO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <header>
-       <!-- Your content goes here -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Header -->
+    <div class="header">
         <div class="container">
-            <a class="navbar-brand" href="index.html">My Website</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html" aria-current="page">Contact</a>
-                    </li>
-                </ul>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/Brooks & CO.jpg" width="125px" alt="Brooks & CO Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
             </div>
         </div>
-    </nav>
-  </header>
+    </div>
 
-  <main class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        
-        <!-- Your original paragraph and email link kept EXACTLY (only fixed the broken mailto href to match the real email) -->
-        <p class="text-center lead mb-5">
-          If you'd like to get in touch, feel free to email me at 
-          <a href="mailto:bida25-239@thuto.bac.ac.bw" class="btn btn-success btn-lg">
-            bida25-239@thuto.bac.ac.bw
-          </a>
-        </p>
+    <!-- Contact Section -->
+    <div class="small-container">
+        <h1>Contact Me</h1>
+        <p>If you'd like to get in touch, feel free to email me at <a href="mailto:example@example.com">Brooks & CO@gmail.Com</a>.</p>
+    </div>
 
-        <!-- Added necessary professional contact form (standard for any "Contact Me" page) -->
-        <div class="row g-5">
-          <div class="col-lg-7">
-            <div class="card shadow-sm">
-              <div class="card-body p-4">
-                <h4 class="card-title mb-4">Send Me a Message</h4>
-                <form action="#" method="POST" id="contactForm">
-                  <div class="mb-3">
-                    <label class="form-label">Your Full Name</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Your Email Address</label>
-                    <input type="email" class="form-control" required>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Subject</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Message</label>
-                    <textarea class="form-control" rows="6" required></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-success w-100 py-3">
-                    <i class="fas fa-paper-plane me-2"></i>Send Message
-                  </button>
-                </form>
-              </div>
+    <!------- Footer ------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our App</h3>
+                    <p>Download App for Android and iOS mobile phones</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png" alt="Play Store">
+                        <img src="images/apple store.png" alt="App Store">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                        <li>X</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <!-- Added useful contact info panel -->
-          <div class="col-lg-5">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body p-4">
-                <h4 class="card-title mb-4">Other Contact Details</h4>
-                <ul class="list-unstyled">
-                  <li class="mb-4">
-                    <i class="fas fa-envelope text-success fa-2x mb-3"></i>
-                    <h6>Email</h6>
-                    <a href="mailto:bida25-239@thuto.bac.ac.bw" class="text-decoration-none">brooksthatayaone1@gmail.com</a>
-                  </li>
-                  <li class="mb-4">
-                    <i class="fas fa-map-marker-alt text-success fa-2x mb-3"></i>
-                    <h6>Location</h6>
-                    <p class="mb-0">Gaborone, Botswana</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <hr>
+            <p class="copyright">&copy; 2026 - BROOKS & CO</p>
         </div>
-      </div>
     </div>
-  </main>
-
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-      <p>&copy; 2026 Thatayaone Rodney Brooks</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-  <!-- Simple form feedback (demo only) -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('✅ Thank you! Your message has been received (demo).');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
