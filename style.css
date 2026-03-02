@@ -216,3 +216,245 @@ ul{
 .copyright{
     text-align: center;
 }
+
+/*--------all products page-------*/
+.row-2{
+    justify-content: space-between;
+    margin:100px auto 50px;
+}
+Select{
+    boarder: 1px solid #ff523b
+    padding: 5px
+}
+select:focus{
+    outline: none;
+}
+.page-btn{
+    margin: 0 auto 80px ;
+}
+.page-btn span{
+    display: inline block;
+    border: 1px solid #ff523b;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.page-btn span:hover{
+    background: #ff523b;
+    color: white;
+}
+/*-----single products details--------*/
+.single-product{
+    margin-top: 80px;
+}
+.single-product .col-2 img{
+    padding: 0;
+}
+.single-product .col-2{
+padding: 20px;
+}
+.single-product h4{
+    margin: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+input:focus{
+    outline: none;
+
+}
+.single-product .fa{
+    color: #ff523b;
+    margin-left: 10px;
+}
+.single-product .row{
+    text-align: left;
+}
+.single-product .col-2{
+    padding: 20px 0;
+}
+.single-product h1 {
+    font-size: 26px;
+    line-height: 30px;
+}
+.small-img-row {
+   display: flex;
+   justify-content: center;
+   gap: 12px;
+   margin-top: 20px;
+        }
+        .small-img-col {
+            flex: 0 0 auto;
+            cursor: pointer;
+        }
+        .small-img {
+            width: 75px !important;   
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .small-img:hover {
+            border-color: #000;
+            transform: scale(1.08);
+        }
+.ProductImg {
+    width: 80% !important;     
+    max-width: 520px;     
+    margin: 0 auto 25px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-color: #000;
+    transform: scale(1.08);
+     }
+            
+ .ProductImg:hover {
+    transform: scale(1.02);
+ }
+/*-----------cart item details------------*/
+.cart-page{
+    margin: 80px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info{
+   display: flex;
+   flex-wrap: wrap;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: #ff523b;
+    font-size: 12px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: ;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 400px;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th.last-child{
+    text-align: right;
+}
+
+/*--------------account-page------------*/
+
+.account-page{
+    padding: 50px 0;
+    background: radial-gradient(#fff,#ffd6d6);
+}
+.form-container{
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+}
+
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #000;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-btn{
+    display: inline-block;
+}
+
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+.form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border:1px solid #ccc ;
+}
+form .btn{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:focus{
+    outline: none;
+}
+
+#LoginForm{
+    left: -300px;
+}
+
+#RegForm{
+    left: 0;
+}
+
+form a{
+    font-size: 12px;
+}
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
