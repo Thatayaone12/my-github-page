@@ -3,13 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Brooks & CO</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Brooks & CO | Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Header */
+        .header {
+            background: #dfafaf;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .logo img {
+            width: 125px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #ff523b;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Left Info */
+        .contact-info {
+            background: #ff523b;
+            color: white;
+            padding: 60px 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 5px;
+        }
+
+        /* Form */
+        .contact-form {
+            padding: 60px 50px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff523b;
+            box-shadow: 0 0 0 4px rgba(255, 82, 59, 0.15);
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn {
+            background: #ff523b;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e63939;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-around;
+        }
+
+        .footer-col-1, .footer-col-2, .footer-col-3 {
+            min-width: 250px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li a {
+            color: #8a8a8a;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            color: #ff523b;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 30px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
+
+    <!------------ Header ------------>
+    <header class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
@@ -19,25 +244,74 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
                         <li><a href="account.html">Account</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-
                     </ul>
                 </nav>
                 <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
             </div>
         </div>
-    </div>
+      </div>
+    </header>
 
     <!-- Contact Section -->
-    <div class="small-container">
-        <h1>Contact Me</h1>
-        <p>If you'd like to get in touch, feel free to email us at for inquries and orders<a href="mailto:example@example.com">Brooks & CO@gmail.Com</a>.</p>
-    </div>
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <!-- Left Side - Info -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Have a question or feedback? We'd love to hear from you.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Gaborone, Botswana</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+267 71689942</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:Brooks&CO@gmail.com">Brooks & CO@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
 
-    <!------- Footer ------->
-    <div class="footer">
+            <!-- Right Side - Form -->
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col-1">
@@ -52,7 +326,7 @@
                     <h3>Useful Links</h3>
                     <ul>
                         <li>Coupons</li>
-                        <li>Blog Posts</li>
+                        <li>Blog posts</li>
                         <li>Return Policy</li>
                         <li>Join Affiliate</li>
                     </ul>
@@ -68,8 +342,17 @@
                 </div>
             </div>
             <hr>
-            <p class="copyright">&copy; 2026 - BROOKS & CO</p>
+            <p class="copyright">Copyright 2026 - BROOKS & CO</p>
         </div>
-    </div>
+      </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent (Demo)');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
