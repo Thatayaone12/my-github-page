@@ -3,43 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Brooks & CO</title>
+    <title>About Us | Brooks & CO</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Header / Navbar (same as homepage) -->
+
+    <!-- Semantic Header -->
     <header class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
                     <img src="images/Brooks & CO.jpg" width="125px" alt="Brooks & CO Logo">
                 </div>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
+                <a href="cart.html">
+                    <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
+                </a>
             </div>
         </div>
-      </div>
     </header>
 
-    <!-- Contact Section -->
-<section class="small-container">
-      <h1>About Brooks & CO</h1>
-     <p>Brooks & CO is a Botswana-based fashion brand providing stylish,
-      affordable clothing, footwear, and accessories for men, women, and kids.</p>
-     <p> Our mission is to combine modern trends with comfort and quality,
-     delivering fashion that fits your lifestyle.</p>
-     <p>We are proud to serve customers across Botswana with a focus on
-      reliability, value, and excellent customer experience.</p>
- </section>
+    <!-- Main Content -->
+    <main>
+        <section class="about-section small-container">
+            <h1>About Brooks & CO</h1>
+            
+            <p>Brooks & CO is a Botswana-based fashion brand providing stylish, 
+               affordable clothing, footwear, and accessories for men, women, and kids.</p>
+            
+            <p>Our mission is to combine modern trends with comfort and quality, 
+               delivering fashion that fits your lifestyle.</p>
+            
+            <p>We are proud to serve customers across Botswana with a focus on 
+               reliability, value, and excellent customer experience.</p>
+
+            <!-- Optional: You can add more sections here -->
+            <div class="about-values">
+                <h2>Our Values</h2>
+                <ul>
+                    <li>Quality & Comfort</li>
+                    <li>Affordability</li>
+                    <li>Customer Satisfaction</li>
+                    <li>Local Pride</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
 
     <!-- Footer (same as homepage) -->
