@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brooks & CO | Contact</title>
+    <title>Contact Us | Brooks & CO</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -26,9 +27,9 @@
             padding: 0 25px;
         }
 
-        /* Header */
+    
         .header {
-            background: #dfafaf;
+            background: #edd8d8);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -38,31 +39,29 @@
         .navbar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             padding: 20px 0;
         }
-
+         
+        nav{
+            flex: 1;
+             text-align: right;
+        }
+        
         .logo img {
             width: 125px;
         }
 
         nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
+            display:inline-block
+            list-style-type: none;x;
         }
 
         nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
+            display: inline-block;
+            margin-right: 20px;;
         }
 
-        nav ul li a:hover {
-            color: #ff523b;
-        }
 
-        /* Contact Section */
         .contact-section {
             padding: 80px 0;
         }
@@ -79,7 +78,6 @@
             margin: 0 auto;
         }
 
-        /* Left Info */
         .contact-info {
             background: #ff523b;
             color: white;
@@ -112,7 +110,7 @@
             margin-bottom: 5px;
         }
 
-        /* Form */
+        /* Right Side - Form */
         .contact-form {
             padding: 60px 50px;
         }
@@ -175,7 +173,7 @@
             justify-content: space-around;
         }
 
-        .footer-col-1, .footer-col-2, .footer-col-3 {
+        .footer-col {
             min-width: 250px;
         }
 
@@ -197,124 +195,98 @@
             color: #ff523b;
         }
 
-        .app-logo img {
-            width: 140px;
-        }
-
-        .footer hr {
-            border: none;
-            background: #b5b5b5;
-            height: 1px;
-            margin: 30px 0;
-        }
-
         .copyright {
             text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
         }
     </style>
 </head>
 <body>
 
-    <!------------ Header ------------>
+    <!-- Simple Header (as per your first design) -->
     <header class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
                     <img src="images/Brooks & CO.jpg" width="125px" alt="Brooks & CO Logo">
                 </div>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
             </div>
         </div>
-      </div>
     </header>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-container">
-            
-            <!-- Left Side - Info -->
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                <p>Have a question or feedback? We'd love to hear from you.</p>
+    <main>
+        <section class="contact-section">
+            <div class="contact-container">
                 
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Gaborone, Botswana</p>
+                <!-- Left Side: Contact Info -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Have a question or feedback? We'd love to hear from you.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Gaborone, Botswana</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+267 71689942</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:Brooks&CO@gmail.com" style="color: white;">Brooks&CO@gmail.com</a></p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+267 71689942</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:Brooks&CO@gmail.com">Brooks & CO@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Right Side - Form -->
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="6" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                <!-- Right Side: Form -->
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="footer-col-1">
+                <div class="footer-col">
                     <h3>Download our App</h3>
                     <p>Download App for Android and iOS mobile phones</p>
                     <div class="app-logo">
@@ -322,29 +294,28 @@
                         <img src="images/apple store.png" alt="App Store">
                     </div>
                 </div>
-                <div class="footer-col-2">
+                <div class="footer-col">
                     <h3>Useful Links</h3>
                     <ul>
-                        <li>Coupons</li>
-                        <li>Blog posts</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
+                        <li><a href="#">Coupons</a></li>
+                        <li><a href="#">Blog posts</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Join Affiliate</a></li>
                     </ul>
                 </div>
-                <div class="footer-col-3">
+                <div class="footer-col">
                     <h3>Follow Us</h3>
                     <ul>
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>YouTube</li>
-                        <li>X</li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">X</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
-            <p class="copyright">Copyright 2026 - BROOKS & CO</p>
+            <p class="copyright">&copy; 2026 - BROOKS & CO</p>
         </div>
-      </div>
     </footer>
 
     <script>
