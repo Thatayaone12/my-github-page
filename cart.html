@@ -40,19 +40,18 @@
 
   <h1>Your Shopping Cart</h1>
 
- <table id="cart-table">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody id="cart-items">
-    <!-- Items injected by JavaScript -->
-  </tbody>
-</table>
+  <!-- CART TABLE -->
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
       <tr class="cart-item" data-price="2000">
         <td>Royal Blue Suit</td>
         <td>
@@ -107,7 +106,6 @@
     <p><em>Totals update automatically when quantities change.</em></p>
   </section>
 
-</main>
 
  <!------ Footer------->
     <footer class="footer">
@@ -150,68 +148,47 @@
 <!------------- JAVASCRIPT ---------------->
 <script>
   const TAX_RATE = 0.14;
-  const cartItemsContainer = document.getElementById("cart-items");
 
-  function loadCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartItemsContainer.innerHTML = "";
+  function updateCart() {
+    let subtotal = 0;
 
-    cart.forEach((item, index) => {
-      const row = document.createElement("tr");
-      row.classList.add("cart-item");
+    document.querySelectorAll('.cart-item').forEach(item => {
+      const price = parseFloat(item.dataset.price);
+      const quantity = item.querySelector('.qty').value;
+      const itemTotal = price * quantity;
 
-      row.innerHTML = `
-        <td>${item.name}</td>
-        <td>
-          <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="qty">
-        </td>
-        <td class="item-subtotal">P${(item.price * item.quantity).toFixed(2)}</td>
-        <td>
-          <button class="remove-btn" data-index="${index}">Remove</button>
-        </td>
-      `;
+      item.querySelector('.item-subtotal').textContent =
+        `P${itemTotal.toFixed(2)}`;
 
-      cartItemsContainer.appendChild(row);
+      subtotal += itemTotal;
     });
 
-    bindEvents();
-    updateTotals();
+    const tax = subtotal * TAX_RATE;
+    const total = subtotal + tax;
+
+    document.getElementById('cart-subtotal').textContent =
+      `P${subtotal.toFixed(2)}`;
+    document.getElementById('cart-tax').textContent =
+      `P${tax.toFixed(2)}`;
+    document.getElementById('cart-total').textContent =
+      `P${total.toFixed(2)}`;
   }
 
-  function bindEvents() {
-    document.querySelectorAll(".qty").forEach(input => {
-      input.addEventListener("change", e => {
-        const index = e.target.dataset.index;
-        let cart = JSON.parse(localStorage.getItem("cart"));
-        cart[index].quantity = parseInt(e.target.value);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
-      });
+  // Update cart when quantity changes
+  document.querySelectorAll('.qty').forEach(input => {
+    input.addEventListener('change', updateCart);
+  });
+
+  // Remove item from cart
+  document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.target.closest('.cart-item').remove();
+      updateCart();
     });
+  });
 
-    document.querySelectorAll(".remove-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        let cart = JSON.parse(localStorage.getItem("cart"));
-        cart.splice(e.target.dataset.index, 1);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
-      });
-    });
-  }
-
-  function updateTotals() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    let tax = subtotal * TAX_RATE;
-    let total = subtotal + tax;
-
-    document.getElementById("cart-subtotal").textContent = `P${subtotal.toFixed(2)}`;
-    document.getElementById("cart-tax").textContent = `P${tax.toFixed(2)}`;
-    document.getElementById("cart-total").textContent = `P${total.toFixed(2)}`;
-  }
-
-  loadCart();
+  // Initial calculation on load
+  updateCart();
 </script>
-
 </body>
 </html>
