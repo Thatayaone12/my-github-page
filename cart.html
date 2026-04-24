@@ -1,190 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart-Brooks & CO</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Brooks & CO</title>
+
+  <!-- SEO -->
+  <meta name="description" content="View and manage items in your Brooks & CO shopping cart.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-    <header class="small-container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="images/Brooks & CO.jpg" width="125px" alt="Brooks & CO Logo">
-            </div>
-            <nav>
-                <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="account.html">Account</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                </ul>
-            </nav>
-            <img src="images/cart.jpg" width="30px" height="30px" alt="Cart">
-        </div>
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/Brooks & CO.jpg" width="125" alt="Brooks & CO Logo">
+        </a>
       </div>
-    </header>
 
-    
-<!-----------cart item details------------>
-       <div class="small-container cart-page">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="cart.html" aria-current="page">Cart</a></li>
+      </ul>
 
-         <table>
-              <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-              </tr>
-              <tr>
-                   <td>
+      <a href="cart.html" aria-label="Shopping cart">
+        <img src="images/cart.jpg" width="30" height="30" alt="Cart icon">
+      </a>
+    </nav>
+  </div>
+</header>
 
-                     <div class="cart-info">
-                        <img src="images/Button_Double BreastedOccasion_Prom, Wedding….jpg">
-                        <div>
-                            <p>Button Double-Breasted Suit</p>
-                            <small>Price: P1200.00</small>
-                            <br>
-                            <a href="">Remove</a>
+<main class="small-container cart-page">
 
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P1200.00</td>
+  <h1>Your Shopping Cart</h1>
 
-                   </td>
-              </tr>
-              </tr>
-              <tr>
-                   <td>
+  <!-- CART TABLE -->
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
 
-                     <div class="cart-info">
-                        <img src="images/Men's Elegant Suit Set Royal Blue Business….jpg">
-                        <div>
-                            <p>Royal Blue  Suit</p>
-                            <small>Price: P2000.00</small>
-                            <br>
-                            <a href="">Remove</a>
+    <tbody>
+      <tr class="cart-item" data-price="2000">
+        <td>Royal Blue Suit</td>
+        <td>
+          <input type="number" class="qty" value="1" min="1">
+        </td>
+        <td class="item-subtotal">P2000.00</td>
+        <td>
+          <button class="remove-btn">Remove</button>
+        </td>
+      </tr>
 
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P2000.00</td>
+      <tr class="cart-item" data-price="350">
+        <td>Apricot Sweatshirt</td>
+        <td>
+          <input type="number" class="qty" value="1" min="1">
+        </td>
+        <td class="item-subtotal">P350.00</td>
+        <td>
+          <button class="remove-btn">Remove</button>
+        </td>
+      </tr>
 
-                   </td>
-              </tr>
-              </tr>
-              <tr>
-                   <td>
+      <tr class="cart-item" data-price="950">
+        <td>Long Sleeve Dress</td>
+        <td>
+          <input type="number" class="qty" value="1" min="1">
+        </td>
+        <td class="item-subtotal">P950.00</td>
+        <td>
+          <button class="remove-btn">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-                     <div class="cart-info">
-                        <img src="images/3pcs Young Girl Outfit_ Apricot Sweatshirt….jpg">
-                        <div>
-                            <p>Apricot Sweatshirt</p>
-                            <small>Price: P350.00</small>
-                            <br>
-                            <a href="">Remove</a>
+  <!-- TOTALS -->
+  <section class="total-price">
+    <table>
+      <tr>
+        <td>Subtotal</td>
+        <td id="cart-subtotal">P0.00</td>
+      </tr>
+      <tr>
+        <td>Tax (14%)</td>
+        <td id="cart-tax">P0.00</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td id="cart-total"><strong>P0.00</strong></td>
+      </tr>
+    </table>
+    <p><em>Totals update automatically when quantities change.</em></p>
+  </section>
 
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P350.00</td>
+</main>
 
-                   </td>
-              </tr>
-              </tr>
-              <tr>
-                   <td>
-
-                     <div class="cart-info">
-                        <img src="images/PRICES MAY VARY_ ❄️【FEATURES】The long sleeve dress….jpg">
-                         <div>
-                            <p>Long Sleeve Dress</p>
-                            <small>Price: P950.00</small>
-                            <br>
-                            <a href="">Remove</a>
-
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P950.00</td>
-
-                   </td>
-              </tr>
-              </tr>
-              <tr>
-                   <td>
-
-                     <div class="cart-info">
-                        <img src="images/3pcs_Set Street Cool Casual Teen Girls Loose Denim….jpg">
-                        <div>
-                            <p> Girls Loose Denim</p>
-                            <small>Price: P550.00</small>
-                            <br>
-                            <a href="">Remove</a>
-
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P550.00</td>
-
-                   </td>
-              </tr>
-              </tr>
-              <tr>
-                   <td>
-
-                     <div class="cart-info">
-                        <img src="images/Introducing our Women Sneakers High Quality Tennis….jpg">
-                        <div>
-                            <p>Women Snikers</p>
-                            <small>Price: P2350.00</small>
-                            <br>
-                            <a href="">Remove</a>
-
-                        </div>
-                    </div>
-                   
-                   <td><input type="number" value="1"></td>
-                   <td>P2350.00</td>
-
-                   </td>
-              </tr>
-
-         </table>
-
-        <div class="total-price">
-
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>P300.00</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>P300.00</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>P300.00</td>
-                </tr>
-            </table>
-
-        </div>
-       </div>
-   
-    </div>
-
-    <!------ Footer------->
-    <div class="footer">
+ <!------ Footer------->
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col-1">
@@ -217,8 +146,55 @@
             <hr>
             <p class="copyright">Copyright 2026 - BROOKS & CO</p>
         </div>
-    </div>
+      </div>
 
-    </script>
+     </footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  const TAX_RATE = 0.14;
+
+  function updateCart() {
+    let subtotal = 0;
+
+    document.querySelectorAll('.cart-item').forEach(item => {
+      const price = parseFloat(item.dataset.price);
+      const quantity = item.querySelector('.qty').value;
+      const itemTotal = price * quantity;
+
+      item.querySelector('.item-subtotal').textContent =
+        `P${itemTotal.toFixed(2)}`;
+
+      subtotal += itemTotal;
+    });
+
+    const tax = subtotal * TAX_RATE;
+    const total = subtotal + tax;
+
+    document.getElementById('cart-subtotal').textContent =
+      `P${subtotal.toFixed(2)}`;
+    document.getElementById('cart-tax').textContent =
+      `P${tax.toFixed(2)}`;
+    document.getElementById('cart-total').textContent =
+      `P${total.toFixed(2)}`;
+  }
+
+  // Update cart when quantity changes
+  document.querySelectorAll('.qty').forEach(input => {
+    input.addEventListener('change', updateCart);
+  });
+
+  // Remove item from cart
+  document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.target.closest('.cart-item').remove();
+      updateCart();
+    });
+  });
+
+  // Initial calculation on load
+  updateCart();
+</script>
+
 </body>
 </html>
