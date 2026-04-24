@@ -332,6 +332,28 @@ input:focus{
 .cart-page{
     margin: 80px auto;
 }
+.add-to-cart {
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--dark);
+    border: none;
+    padding: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #f0c14e;
+    transform: translateY(-2px);
+}
+
+.cart-link {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--dark);
+}
 table{
     width: 100%;
     border-collapse: collapse;
