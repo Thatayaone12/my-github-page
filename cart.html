@@ -149,47 +149,67 @@
 <!------------- JAVASCRIPT ---------------->
 <script>
   const TAX_RATE = 0.14;
+  const cartItemsContainer = document.getElementById("cart-items");
 
-  function updateCart() {
-    let subtotal = 0;
+  function loadCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartItemsContainer.innerHTML = "";
 
-    document.querySelectorAll('.cart-item').forEach(item => {
-      const price = parseFloat(item.dataset.price);
-      const quantity = item.querySelector('.qty').value;
-      const itemTotal = price * quantity;
+    cart.forEach((item, index) => {
+      const row = document.createElement("tr");
+      row.classList.add("cart-item");
 
-      item.querySelector('.item-subtotal').textContent =
-        `P${itemTotal.toFixed(2)}`;
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>
+          <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="qty">
+        </td>
+        <td class="item-subtotal">P${(item.price * item.quantity).toFixed(2)}</td>
+        <td>
+          <button class="remove-btn" data-index="${index}">Remove</button>
+        </td>
+      `;
 
-      subtotal += itemTotal;
+      cartItemsContainer.appendChild(row);
     });
 
-    const tax = subtotal * TAX_RATE;
-    const total = subtotal + tax;
-
-    document.getElementById('cart-subtotal').textContent =
-      `P${subtotal.toFixed(2)}`;
-    document.getElementById('cart-tax').textContent =
-      `P${tax.toFixed(2)}`;
-    document.getElementById('cart-total').textContent =
-      `P${total.toFixed(2)}`;
+    bindEvents();
+    updateTotals();
   }
 
-  // Update cart when quantity changes
-  document.querySelectorAll('.qty').forEach(input => {
-    input.addEventListener('change', updateCart);
-  });
-
-  // Remove item from cart
-  document.querySelectorAll('.remove-btn').forEach(button => {
-    button.addEventListener('click', e => {
-      e.target.closest('.cart-item').remove();
-      updateCart();
+  function bindEvents() {
+    document.querySelectorAll(".qty").forEach(input => {
+      input.addEventListener("change", e => {
+        const index = e.target.dataset.index;
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        cart[index].quantity = parseInt(e.target.value);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
     });
-  });
 
-  // Initial calculation on load
-  updateCart();
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+      btn.addEventListener("click", e => {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        cart.splice(e.target.dataset.index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
+    });
+  }
+
+  function updateTotals() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let tax = subtotal * TAX_RATE;
+    let total = subtotal + tax;
+
+    document.getElementById("cart-subtotal").textContent = `P${subtotal.toFixed(2)}`;
+    document.getElementById("cart-tax").textContent = `P${tax.toFixed(2)}`;
+    document.getElementById("cart-total").textContent = `P${total.toFixed(2)}`;
+  }
+
+  loadCart();
 </script>
 
 </body>
